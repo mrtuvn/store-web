@@ -1,0 +1,67 @@
+html,
+body {
+  background-color: var(--color-primary);
+
+  @media (prefers-color-scheme: dark) {
+    color-scheme: dark;
+  }
+}
+
+.flex {
+    display: flex;
+}
+
+.grid {
+    display: grid;
+
+    resize: horizontal;
+
+    overflow: hidden;
+
+    container-type: inline-size;
+
+    /* gap + minimum size in the minmax() is important, 
+    they can be any number but it's user for the math below */
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+
+    max-inline-size: 1200px;
+    margin-inline: auto;
+}
+
+.grid > * {
+    padding: 1rem;
+    background: dodgerblue;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px hsl(0 0 0 / 0.2);
+
+    @container ( width < calc(400px + 1rem)) {
+        /* less than 2 colum */
+        &:nth-child(2n)&:nth-last-child(-n + 3) ~ * {
+            background-color: white;
+        }
+
+    }
+
+    @container (calc(400px + 1rem) <= width < calc(600px + 2rem)) {
+        /* 3 columns */
+        &:nth-child(3n)&:nth-last-child(-n + 4) ~ * {
+            background-color: white;
+        }
+    }
+
+    @container (calc(600px + 2rem) <= width < calc(800px + 3rem)) {
+        /* 4 columns */
+        &:nth-child(3n)&:nth-last-child(-n + 5) ~ * {
+            background-color: white;
+        }
+    }
+
+    @container (calc(800px + 3rem) <= width < calc(1000px + 4rem)) {
+        /* 5 columns */
+    }
+
+    @container (calc(1000px + 4rem) <= width < calc(1200px + 5rem)) {
+        /* 6 columns */
+    }
+}

@@ -1,0 +1,8 @@
+import { AppService } from './app.service';
+export declare class AppController {
+    private readonly appService;
+    constructor(appService: AppService);
+    getHello(): string;
+    getBye(): string;
+    getSum(a: number, b: number): number;
+}

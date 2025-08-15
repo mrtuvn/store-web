@@ -7,10 +7,6 @@ body {
   }
 }
 
-.flex {
-    display: flex;
-}
-
 .grid {
     display: grid;
 
@@ -35,7 +31,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 8px hsl(0 0 0 / 0.2);
 
-    @container ( width < calc(400px + 1rem)) {
+    @container (width < calc(400px + 1rem)) {
         /* less than 2 colum */
         &:nth-child(2n)&:nth-last-child(-n + 3) ~ * {
             background-color: white;

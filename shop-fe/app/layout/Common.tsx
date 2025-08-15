@@ -4,7 +4,7 @@ import Nav from "@/components/common/Nav";
 export default function Common () {
     return (
         <>
-        <div className="flex flex-col items-center justify-center h-screen">
+        <div className="main">
         <Nav />
         <Outlet />
 

@@ -1,13 +1,22 @@
+//import FetchComponent from "~/components/FetchComponent";
+import FetchByTanStackQueryComponent from "~/components/tanStackQuery";
+
 export default function Contact() {
-    const promise = new Promise((resolve) => {
-        setTimeout(() => resolve('finish'), 2000)
-    }).then(res => console.log(res));
+    // const promise = new Promise((resolve) => {
+    //     setTimeout(() => resolve('finish'), 2000)
+    // }).then(res => console.log(res));
 
 
     return (
         <>
         <h1>Contact page</h1>
         <p>Feel free to contact us</p>
+
+        <p>By Fetch Simple Approach</p>
+        {/* <FetchComponent /> */}
+
+        <p>By Tanstack</p>
+        <FetchByTanStackQueryComponent />
 
         <div className="grid">
             <div></div>
@@ -25,7 +34,7 @@ export default function Contact() {
 
         <style>
             {`
-            h1 {color: blue;}
+            h1 {color: inherit;}
             `}
         </style>
         </>
